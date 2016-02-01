@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Colors</title>
+	<script>
+		window.onload = function() {
+			var list = document.getElementById("list");
+			for (var i = 0; i < 10; i++)
+				list.innerHTML += "<li style='color:" + generateColor() + "'>" + (i+1) + "</li>";
+
+			function generateColor() {
+				var red = parseInt(Math.random() * (255-0) + 0);
+				var green = parseInt(Math.random() * (255-0) + 0);
+				var blue = parseInt(Math.random() * (255-0) + 0);
+				return "rgb(" + red + ", " + green + ", " + blue + ")";
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="list" style="list-style:none"></ul>
+</body>
+</html>
