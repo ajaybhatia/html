@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro to CSS</title>
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	<style type="text/css">
+		body {
+			background-image: url('images/wraithmonster-avatar-large-cropped.png');
+			background-repeat: no-repeat;
+		}
+
+		div.container {
+			background-color: lightgreen;
+			position: absolute;
+			left: 20%;
+			right: 20%;
+			height: 100%;
+			color: rgb(100, 50, 100);
+			border-radius: 50px 50px;
+		}
+
+		div.header {
+			font-size: 1.5em;
+			background-color: cyan;
+			font-family: 'MyCustomFont';
+			text-align: center;
+		}
+
+		@font-face {
+			font-family: 'MyCustomFont';
+			src: url('fonts/CabinSketch-Bold.otf');	
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		li {
+			margin-bottom: 10px;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('li').mouseover(function() {
+				$(this).parent().children('li').css('font-size', '1em');
+				$(this).parent().children('li').css('font-weight', 'normal');
+				$(this).css('font-size', '1.5em');
+				$(this).css('font-weight', 'bold');
+				$(this).css('color', 'red');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Welcome</h1>
+		</div>
+
+		<ul>
+			<li>First</li>
+			<li>Second</li>
+			<li>Third</li>
+			<li>Fourth</li>
+			<li>Fifth</li>
+		</ul>
+	</div>	
+</body>
+</html>
