@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+	<style type="text/css">
+		.buttons {
+			position: relative;
+			left: 42%;
+		}
+
+		.buttons button {
+			width: 100px;
+			background-color: lightblue;
+			font-weight: bold;
+		}
+
+		h3 {
+			margin-left: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		var div;
+		window.onload = function() {
+			div = document.getElementById('result');	
+
+			var names = generateArray();
+			printArray(names);
+		}
+
+		function sortNames() {
+			var names = generateArray();
+
+			names.sort();
+			printArray(names);
+		}
+
+		function unsortNames() {
+			var names = generateArray();
+			printArray(names);
+		}
+
+		function generateArray() {
+			return Array('Ankush', 'Deep', 'Bhupinder', "Gagan", "Manjinder", 'Kirti', 'Bhawna', 'Mamta', 'Dilpreet', "Harjinder", 'Bhawna Suman', 'Mamta', 'Kuldeep', 'Hartinder', "Harish", 'Jaswinder', 'Babita', "Geetika", 'Gurpreet', 'Anjali', "Ajay", "Akash", "Charanjit", "Harinder", "Kuldeep", "Sodhi");
+		}
+
+		function printArray(names) {
+			div.innerHTML = "";
+			for (var i = 0; i < names.length; i++)
+				div.innerHTML += "<h3>" + names[i] + "<sub>" + (i+1) + "</sub></h3>";
+		}
+	</script>
+</head>
+<body>
+	<div class="buttons">
+		<button onclick="unsortNames()">Un-sort</button>
+		<button onclick="sortNames()">Sort</button>
+	</div>
+	<div id="result"></div>
+</body>
+</html>
