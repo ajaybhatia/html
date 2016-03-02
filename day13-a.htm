@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Forms</title>
+	<style type="text/css">
+		table {
+			position: relative;
+			margin: 0 auto;
+			width: 35%;
+			margin-top: 3%;
+			background-color: cyan;
+		}
+
+		td:nth-child(1) {
+			font-weight: bold;
+		}
+
+		input[type="button"]:first-child {
+			margin-right: 60px;
+		}
+
+		input[type='button'] {
+			background-color: #3456fa;
+			color: white;
+		}
+
+		tr {
+			height: 40px;
+		}
+
+		h3 {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h3>Feedback Form</h3>
+	<form>
+		<table>
+			<tbody>
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" placeholder="For E.g. John"></input></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" placeholder="For E.g. Doe"></input></td>
+				</tr>
+				<tr>
+					<td>Gender:</td>
+					<td><input type="radio" name="gender">Male</input><input type="radio" name="gender">Female</input></td>
+				</tr>
+				<tr>
+					<td>Age:</td>
+					<td><input type="number"></input></td>
+				</tr>
+				<tr>
+					<td>Interests &amp; Hobbies</td>
+					<td>
+						<input type="checkbox">Watching TV</input><br>
+						<input type="checkbox">Listening to Music</input><br>
+						<input type="checkbox">Playing Sports</input><br>
+						<input type="checkbox">Blogging</input><br>
+						<input type="checkbox">Chit-chat</input>
+					</td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td>
+						<select>
+							<option>Amritsar</option>
+							<option>Batala</option>
+							<option>Chandigarh</option>
+							<option>Ferozpur</option>
+							<option selected>Gurdaspur</option>
+							<option>Hoshiarpur</option>
+						</select>						
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="button" value="Submit"></input>
+						<input type="button" value="Cancel"></input>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
