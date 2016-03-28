@@ -1,0 +1,32 @@
+<!--
+	Write a JavaScript code to print your name with each letter in different size and color.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Coloring and Size for Name</title>
+	<script>
+		window.onload = function() {
+			var p = document.getElementById("name");
+			var text = p.innerHTML;
+			var tags = "";
+
+			for (var i = 0; i < text.length; i++) {	
+				var char = text.charAt(i);
+				var fs = parseInt((i + 5) * Math.random() * 10);
+				var r = parseInt((Math.random() * 100) + 255 - 100);
+				var g = parseInt((Math.random() * 100) + 255 - 100);
+				var b = parseInt((Math.random() * 100) + 255 - 100);
+
+				tags += "<span style='font-size:" + fs + "px; color: rgb(" + r + ", " + g + ", " + b + ")'>" + char + "</span>";
+			}
+
+			p.innerHTML = tags;
+		};
+	</script>
+</head>
+<body>
+	<p id="name" style="text-align: center">Ajay</p>
+</body>
+</html>
