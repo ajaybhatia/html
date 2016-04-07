@@ -1,53 +1,63 @@
-<!--
-	JQuery says, “Hello!”
+<!-- 
+	Script: 8 - Query says, “Hello!”
 -->
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title>Hello, jQuery!</title>
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-	<script src="js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("h1").html("Hello, jQuery!");
-			$("h2").html("Welcome");
-			$("h1").addClass("center-h1");
-			$("h2").addClass("center-h2");
-			setInterval(blink, 1000);
-		});
-
-		function blink() {
-			$("h1").animate({
-				height: "toggle",
-				width: "toggle",
-				opacity: "toggle"
-			}, {
-				duration: "slow"
-			});
-		}
-	</script>
-	<style type="text/css" media="screen">
-		body {
-			font-family: 'PT Sans Narrow', sans-serif;
-		}
-
-		.center-h1 {
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	<style type="text/css">
+		div {
 			text-align: center;
-			font-size: 8em;
-			color: darkgreen;
 		}
 
-		.center-h2 {
+		.left {
+			text-align: left;
+		}
+
+		.center {
 			text-align: center;
-			font-size: 6em;
-			color: darkblue;
+		}
+
+		.right {
+			text-align: right;
 		}
 	</style>
+	<script>
+		$(document).ready(function() {
+			$("h1").on("click", function() {
+				$(this).html("Hello, jQuery!");
+				$(this).fadeOut(1000);
+				$(this).fadeIn(1000);
+			});
+
+			$("button:first").on("click", function() {
+				$("h1").removeClass("center");
+				$("h1").removeClass("right");
+				$("h1").addClass("left");
+			});
+
+			$("button:nth-child(2)").on("click", function() {
+				$("h1").addClass("center");
+				$("h1").removeClass("right");
+				$("h1").removeClass("left");
+			});
+
+			$("button:last").on("click", function() {
+				$("h1").removeClass("center");
+				$("h1").addClass("right");
+				$("h1").removeClass("left");
+			});
+		});
+	</script>
 </head>
 <body>
-	<h1><!--Greetings from jQuery--></h1>
-	<h2><!--Welcome message--></h2>
+	<h1 class="center">Welcome</h1>
+	<div>
+		<button>&lt;</button>
+		<button>Center</button>
+		<button>&gt;</button>
+	</div>
 </body>
 </html>

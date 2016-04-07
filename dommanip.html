@@ -1,0 +1,31 @@
+<!--
+	Script 9: Script to manipulate DOM using jQuery
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulate DOM using jQuery</title>
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("button").on("click", function() {
+				var name = $("input").val();
+				if (name != "") {
+					$("ol").append("<li>" + name + "</li>");
+					$("input").val("");
+				}
+			});
+		});
+	</script>
+	<style type="text/css" media="screen">
+		li:nth-child(even) {
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="What's your name?"/>
+	<button>Save</button>
+	<ol></ol>
+</body>
+</html>
