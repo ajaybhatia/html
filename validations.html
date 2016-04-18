@@ -1,0 +1,63 @@
+<!--
+
+Practical: 10
+
+A webpage with JS code to apply validation to a web-form
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validations using jQuery</title>
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+		table {
+			margin: 0 auto;
+		}
+
+		.name-error, .age-error {
+			display: none;
+			color: red;
+			background-color: lightyellow;
+		}
+	</style>
+
+	<script>
+		$(document).ready(function() {
+			$("input[type='text']").on('focusout', function() {
+				if ($(this).val() == "")
+					$(".name-error").css("display", "block");
+				else 
+					$(".name-error").css("display", "none");
+			});
+
+			$("input[type='number']").on('focusout', function() {
+				if (!$(this).val() || ($(this).val() < 1) || ($(this).val() > 100))
+					$(".age-error").css("display", "block");
+				else
+					$(".age-error").css("display", "none");
+			});
+		});	
+	</script>
+</head>
+<body>
+	<form>
+	<table>
+		<tbody>
+			<tr>
+				<td><label for="name">Name:</label></td>
+				<td><input type="text" id="name" value="" placeholder=""></td>
+				<td class="name-error">Name cannot be empty</td>
+			</tr>
+			<tr>
+				<td><label for="age">Age:</label></td>
+				<td><input type="number" id="age" value="" placeholder=""></td>
+				<td class="age-error">Age cannot be empty or should be between 1 to 100</td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+</body>
+</html>
